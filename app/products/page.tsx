@@ -1,7 +1,7 @@
-import { client } from "@/lib/sanity";
-import { allProductsQuery } from "@/lib/queries";
+import { client } from "../../lib/sanity";
+import { allProductsQuery } from "../../lib/queries";
 import Link from "next/link";
-import { urlFor } from "@/lib/image"; // make sure you have this
+import { urlFor } from "../../lib/image";
 
 export default async function ProductsPage() {
   const products = await client.fetch(allProductsQuery);

@@ -1,5 +1,5 @@
-import { client } from "@/lib/sanity";
-import ProductGrid from "@/components/ProductGrid";
+import ProductGrid from "../components/ProductGrid";
+import { client } from "../lib/sanity";
 
 export default async function Home() {
   const products = await client.fetch(`*[_type == "product"]`);

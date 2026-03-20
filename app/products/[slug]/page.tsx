@@ -1,7 +1,10 @@
-import { client } from "@/lib/sanity";
-import { singleProductQuery, reviewsByProductQuery } from "@/lib/queries";
-import ReviewForm from "@/components/ReviewForm";
-import { urlFor } from "@/lib/image";
+import { client } from "../../../lib/sanity";
+import {
+  singleProductQuery,
+  reviewsByProductQuery,
+} from "../../../lib/queries";
+import ReviewForm from "../../../components/ReviewForm";
+import { urlFor } from "../../../lib/image";
 
 export default async function ProductPage({
   params,
