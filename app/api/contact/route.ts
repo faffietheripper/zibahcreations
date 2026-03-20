@@ -12,7 +12,7 @@ export async function POST(req: Request) {
     }
 
     await resend.emails.send({
-      from: "Website <onboarding@resend.dev>", // change later
+      from: "Zibah Creations Contact Page", // change later
       to: "tafadzwampofu24@gmail.com", // 👈 CLIENT EMAIL
       subject: "New Contact Form Message",
       replyTo: email,
