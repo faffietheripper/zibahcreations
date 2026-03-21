@@ -5,6 +5,36 @@ import {
 } from "../../../lib/queries";
 import ReviewForm from "../../../components/ReviewForm";
 import { urlFor } from "../../../lib/image";
+import { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const product = await client.fetch(singleProductQuery, {
+    slug: params.slug,
+  });
+
+  if (!product) {
+    return {
+      title: "Product Not Found | Zibah Creations",
+    };
+  }
+
+  return {
+    title: `${product.name} | Handmade Macramé Bag`,
+    description:
+      product.story ||
+      "Handcrafted macramé bag made with care and inspired by African design.",
+
+    openGraph: {
+      title: product.name,
+      description: product.story,
+      images: product.mainImage ? [product.mainImage] : [],
+    },
+  };
+}
 
 export default async function ProductPage({
   params,

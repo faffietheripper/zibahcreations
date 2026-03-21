@@ -32,6 +32,7 @@ export const metadata: Metadata = {
     "Zibah Creations",
     "macrame handbags",
     "custom handmade bags",
+    "Macrame bags in Zimbabwe",
   ],
 
   authors: [{ name: "Zibah Creations" }],
@@ -73,6 +74,10 @@ export const metadata: Metadata = {
 
   alternates: {
     canonical: "https://zibahcreations.vercel.app",
+  },
+  other: {
+    "geo.region": "ZW",
+    "geo.placename": "Zimbabwe",
   },
 };
 

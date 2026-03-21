@@ -3,6 +3,12 @@ import { allProductsQuery } from "../../lib/queries";
 import Link from "next/link";
 import { urlFor } from "../../lib/image";
 
+export const metadata = {
+  title: "Collection | Handmade Macramé Bags",
+  description:
+    "Explore handcrafted macramé bags made with culture, care, and creativity.",
+};
+
 export default async function ProductsPage() {
   const products = await client.fetch(allProductsQuery);
 
