@@ -1,4 +1,5 @@
 import ContactForm from "../../components/ContactForm";
+import Link from "next/link";
 
 export const metadata = {
   title: "Contact | Zibah Creations",
@@ -72,11 +73,17 @@ export default function ContactPage() {
 
             <p className="text-gray-700 leading-relaxed">
               Ruth is a creative artist who started Zibah Creations as a hobby
-              in 2017. She is a mother to a beautiful girl and is studying for a
-              Finance degree at a South African University. She currently
+              in 2017. She is a mother to a beautiful girl and holds a Bachelor
+              of Commerce in Financial Management from UNISA. She currently
               resides in Harare, Zimbabwe. Her other artistic ventures include
               stone sculpting and story writing. She loves the beauty in nature
-              and enjoys long walks and cycling.
+              and enjoys long walks, hiking and cycling.
+            </p>
+
+            <p className="text-gray-500 text-sm underline hover:text-blue-500">
+              <Link href="https://www.tiktok.com/@zibah.creations?_r=1&_t=ZS-957vyiJx5yW">
+                Tiktok Handle
+              </Link>
             </p>
 
             <p className="text-gray-500 text-sm">
