@@ -105,8 +105,10 @@ export default function ContactPage() {
             <div className="bg-white p-6 rounded-xl shadow-sm">
               <h3 className="font-medium">What is the shipping policy?</h3>
               <p className="text-gray-600 mt-2 text-sm">
-                We offer free shipping on all purchases done locally and meet
-                the international client halfway on the shipping charges.
+                Orders are dispatched within 3-4 weeks. Customers are
+                responsible for covering shipping costs, which are calculated
+                and shared on the proforma invoice, based on your location. We
+                work with trusted couriers to get your bags safely to you.
               </p>
             </div>
 
