@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
+const siteUrl = "https://www.zibahcreations.com";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -39,17 +41,13 @@ export const metadata: Metadata = {
   creator: "Zibah Creations",
   publisher: "Zibah Creations",
 
-  metadataBase: new URL("https://zibahcreations.com"),
-
-  alternates: {
-    canonical: "https://zibahcreations.com",
-  },
+  metadataBase: new URL(siteUrl),
 
   openGraph: {
     title: "Zibah Creations | Handmade Macramé Bags",
     description:
       "Unique handcrafted macramé bags inspired by African culture and made in Zimbabwe.",
-    url: "https://zibahcreations.com",
+    url: siteUrl,
     siteName: "Zibah Creations",
     images: [
       {
@@ -95,7 +93,7 @@ export default function RootLayout({
     "@type": "WebSite",
     name: "Zibah Creations",
     alternateName: "Zibah",
-    url: "https://zibahcreations.com",
+    url: siteUrl,
   };
 
   return (
