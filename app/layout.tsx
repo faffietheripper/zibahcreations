@@ -17,6 +17,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+
   title: {
     default: "Zibah Creations | Handmade Macramé Bags in Zimbabwe",
     template: "%s | Zibah Creations",
@@ -41,7 +43,9 @@ export const metadata: Metadata = {
   creator: "Zibah Creations",
   publisher: "Zibah Creations",
 
-  metadataBase: new URL(siteUrl),
+  alternates: {
+    canonical: siteUrl,
+  },
 
   openGraph: {
     title: "Zibah Creations | Handmade Macramé Bags",
@@ -51,7 +55,7 @@ export const metadata: Metadata = {
     siteName: "Zibah Creations",
     images: [
       {
-        url: "/zibahlogo.JPG",
+        url: `${siteUrl}/zibahlogo.JPG`,
         width: 1200,
         height: 630,
         alt: "Zibah Creations handmade macramé bags",
@@ -66,12 +70,16 @@ export const metadata: Metadata = {
     title: "Zibah Creations | Handmade Macramé Bags",
     description:
       "Handcrafted macramé bags made with culture, care, and craftsmanship.",
-    images: ["/zibahlogo.JPG"],
+    images: [`${siteUrl}/zibahlogo.JPG`],
   },
 
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
   },
 
   other: {
@@ -80,7 +88,7 @@ export const metadata: Metadata = {
   },
 };
 
-// ✅ ensures fresh Sanity data without needing a redeploy
+// ✅ keeps Sanity data fresh
 export const dynamic = "force-dynamic";
 
 export default function RootLayout({
