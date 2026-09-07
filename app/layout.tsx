@@ -39,7 +39,11 @@ export const metadata: Metadata = {
   creator: "Zibah Creations",
   publisher: "Zibah Creations",
 
-  metadataBase: new URL("https://zibahcreations.com"), // 🔁 update when you get custom domain
+  metadataBase: new URL("https://zibahcreations.com"),
+
+  alternates: {
+    canonical: "https://zibahcreations.com",
+  },
 
   openGraph: {
     title: "Zibah Creations | Handmade Macramé Bags",
@@ -49,10 +53,10 @@ export const metadata: Metadata = {
     siteName: "Zibah Creations",
     images: [
       {
-        url: "/zibahlogo.JPG", // replace later with hero product image
+        url: "/zibahlogo.JPG",
         width: 1200,
         height: 630,
-        alt: "Zibah Creations Macrame Bags",
+        alt: "Zibah Creations handmade macramé bags",
       },
     ],
     locale: "en_ZW",
@@ -72,16 +76,13 @@ export const metadata: Metadata = {
     follow: true,
   },
 
-  alternates: {
-    canonical: "https://zibahcreations.vercel.app",
-  },
   other: {
     "geo.region": "ZW",
     "geo.placename": "Zimbabwe",
   },
 };
 
-// ✅ ensures fresh Sanity data (no redeploy needed)
+// ✅ ensures fresh Sanity data without needing a redeploy
 export const dynamic = "force-dynamic";
 
 export default function RootLayout({
@@ -89,19 +90,31 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Zibah Creations",
+    alternateName: "Zibah",
+    url: "https://zibahcreations.com",
+  };
+
   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-screen flex flex-col bg-[#F7F3EE] text-[#1A1A1A]">
-        {/* NAV */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteSchema),
+          }}
+        />
+
         <Navbar />
 
-        {/* MAIN CONTENT */}
         <main className="flex-grow">{children}</main>
 
-        {/* FOOTER */}
         <Footer />
       </body>
     </html>

@@ -1,13 +1,15 @@
 export const allProductsQuery = `
-  *[_type == "product"]{
+  *[_type == "product"] | order(_createdAt desc) {
     _id,
     name,
     slug,
     mainImage,
     price,
-    featured
+    featured,
+    _createdAt
   }
 `;
+
 export const singleProductQuery = `
   *[_type == "product" && slug.current == $slug][0]{
     name,
